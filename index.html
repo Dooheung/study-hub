@@ -3,98 +3,55 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Study Hub</title>
 
 <style>
-* {
-  box-sizing: border-box;
-}
-
 body {
   margin: 0;
   font-family: Arial, sans-serif;
   background: #0f172a;
   color: white;
+  text-align: center;
 }
 
 header {
-  padding: 30px 20px;
-  text-align: center;
   background: #1e293b;
+  padding: 30px 15px;
 }
 
-header h1 {
+h1 {
   margin: 0;
-  font-size: 32px;
+  font-size: 35px;
 }
 
-header p {
+p {
   color: #cbd5e1;
 }
 
 .container {
-  max-width: 900px;
-  margin: auto;
-  padding: 20px;
-}
-
-.search {
-  width: 100%;
-  padding: 15px;
-  border-radius: 12px;
-  border: none;
-  font-size: 16px;
-  margin-bottom: 25px;
-}
-
-h2 {
-  margin-top: 25px;
-}
-
-.subjects {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 15px;
+  padding: 25px 15px;
 }
 
 .subject {
-  background: #1e293b;
-  padding: 20px;
-  border-radius: 15px;
-  text-align: center;
-  font-size: 18px;
-  cursor: pointer;
-}
-
-.subject:hover {
-  background: #334155;
-}
-
-.quiz {
-  margin-top: 30px;
+  display: block;
+  max-width: 400px;
+  margin: 15px auto;
   padding: 25px;
-  background: #1e293b;
   border-radius: 15px;
-}
-
-button {
-  background: #3b82f6;
+  text-decoration: none;
   color: white;
-  border: none;
-  padding: 13px 20px;
-  border-radius: 10px;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-button:hover {
+  font-size: 25px;
+  font-weight: bold;
   background: #2563eb;
 }
 
+.subject:hover {
+  background: #3b82f6;
+}
+
 footer {
-  text-align: center;
-  padding: 30px;
+  margin-top: 40px;
+  padding: 20px;
   color: #94a3b8;
 }
 </style>
@@ -104,100 +61,28 @@ footer {
 
 <header>
   <h1>📚 Study Hub</h1>
-  <p>Học tập dễ dàng hơn mỗi ngày</p>
+  <p>Website học tập của tôi</p>
 </header>
 
 <div class="container">
 
-  <input
-    class="search"
-    type="text"
-    placeholder="🔎 Tìm kiếm môn học..."
-    onkeyup="searchSubjects()"
-    id="search"
-  >
+  <a class="subject" href="toan.html">
+    🧮 Toán
+  </a>
 
-  <h2>📖 Môn học</h2>
+  <a class="subject" href="van.html">
+    📖 Ngữ Văn
+  </a>
 
-  <div class="subjects" id="subjects">
-
-    <div class="subject">
-      📐<br>
-      Toán
-    </div>
-
-    <div class="subject">
-      📝<br>
-      Ngữ Văn
-    </div>
-
-    <div class="subject">
-      🇬🇧<br>
-      Tiếng Anh
-    </div>
-
-    <div class="subject">
-      🔬<br>
-      Khoa học
-    </div>
-
-  </div>
-
-  <div class="quiz">
-
-    <h2>🎯 Quiz nhanh</h2>
-
-    <p>2 + 2 bằng bao nhiêu?</p>
-
-    <button onclick="checkAnswer(3)">3</button>
-    <button onclick="checkAnswer(4)">4</button>
-    <button onclick="checkAnswer(5)">5</button>
-
-    <p id="result"></p>
-
-  </div>
+  <a class="subject" href="tienganh.html">
+    🇬🇧 Tiếng Anh
+  </a>
 
 </div>
 
 <footer>
   © 2026 Study Hub
 </footer>
-
-<script>
-
-function checkAnswer(answer) {
-
-  let result = document.getElementById("result");
-
-  if (answer === 4) {
-    result.innerHTML = "🎉 Chính xác!";
-  } else {
-    result.innerHTML = "❌ Chưa đúng, thử lại nhé!";
-  }
-
-}
-
-function searchSubjects() {
-
-  let search =
-    document.getElementById("search").value.toLowerCase();
-
-  let subjects =
-    document.querySelectorAll(".subject");
-
-  subjects.forEach(function(subject) {
-
-    if (subject.innerText.toLowerCase().includes(search)) {
-      subject.style.display = "block";
-    } else {
-      subject.style.display = "none";
-    }
-
-  });
-
-}
-
-</script>
 
 </body>
 </html>
